@@ -39,7 +39,7 @@ function writePassword() {
   if (answer.toUpperCase() === "N") {boolN = false} else {boolN = true}
   answer = prompt("Use special characters? (Y)/N");
   if (answer.toUpperCase() === "N") {boolS = false} else {boolS = true}
-  
+  if ((!boolU && !boolL && !boolN && !boolS)) {alert("Password must contain one type of character");writePassword();return;}
   var password = generatePassword(boolU,boolL,boolN,boolS,charCount);
   var passwordText = document.querySelector("#password");
 
